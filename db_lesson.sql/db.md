@@ -1,6 +1,6 @@
 Q1.
 mysql> CREATE TABLE departments (
-    -> department_id int auto_increment primary key,
+    -> department_id int unsigned auto_increment primary key,
     -> name VARCHAR(20) NOT NULL,
     -> created_at timestamp default current_timestamp,
     -> updated_at timestamp default current_timestamp on update current_timestamp
@@ -53,13 +53,13 @@ UPDATE people SET department_id = '4' WHERE person_id = 4;
 UPDATE people SET department_id = '5' WHERE person_id = 6;
 
 Q5.
-SELECT name, age, gender FROM people ORDER BY age DESC WHERE gender = 1;
+SELECT name, age FROM people WHERE gender = 1;
 
 Q6.
-peopleテーブルのname、email、ageカラムに含まれる男性に該当するレコードを作成時刻の最新順に取得する。
+peopleテーブルから営業部に所属する人のname、email、ageカラムを日報作成日時の昇順に取得する。
 
 Q7.
-SELECT * FROM people WHERE age BETWEEN 20 AND 29 AND gender = 2 OR age BETWEEN 40 AND 49 AND gender = 1;
+SELECT name FROM people WHERE age BETWEEN 20 AND 29 AND gender = 2 OR age BETWEEN 40 AND 49 AND gender = 1;
 
 Q8.
 SELECT * FROM people WHERE department_id = 1 ORDER BY age ;
