@@ -74,3 +74,5 @@ mysql> SELECT people.name, departments.name, reports.content
 Q11.
 mysql> SELECT people.name, reports.content = NULL
     -> FROM people JOIN reports ON people.person_id = reports.person_id;
+
+SELECT p.name, r.content = NULL  FROM people p LEFT OUTER JOIN reports r USING (person_id);
